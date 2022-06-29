@@ -1,0 +1,43 @@
+<h1>Hola desde hbs mi nombre es {{ nombreCompleto }}</h1>
+
+<p> y soy mexa tengo {{ edad }}  {{mascota}}</p>
+
+<!--Helpers-->
+{{#if tieneMascota}}
+    <strong>SI tiene mascotas</strong>
+{{else}}
+    <strong>Adopta una :)</strong>    
+{{/if}}
+
+
+<ul>
+    <!--Por cada estudiante realiza lo siguiente-->
+    {{#each estudiantes}}
+    <!--this = a cada estudiante-->
+        <li> {{@index}} {{this}}</li>
+    {{/each}}
+</ul>
+
+{{#unless eresAdmin}}
+    <p>Eres admin</p>
+{{/unless}}
+
+<hr />
+
+<div>
+    <!--Cambiar el contexto helper-->
+    {{#with Vale}}
+        {{@key}}
+        <h3>{{nombre}}</h3>
+        <p>Tiene {{edad}} y es {{seDedicaA}}.</p>
+        {{#with mascota}}
+            <h4>{{nombre}} ES MUY JUGUETON</h4>
+            <img src={{foto}} alt="">
+        {{/with}}
+    {{/with}}
+
+    {{#with Fer}}
+        <h3>{{nombre}}</h3>
+        <p>Tiene {{edad}} y es {{seDedicaA}}.</p>
+    {{/with}}
+</div>

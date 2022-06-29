@@ -1,0 +1,40 @@
+<h1>Estudiantes</h1>
+
+
+<!--
+    1.- Por cada(each) estudiante, mostrar sus datos
+
+     {
+            edad,
+            nombre,
+            seDedicaA,
+            mascota: {
+                nombre,
+                foto
+            }
+        },
+
+-->
+<style>
+    .container{
+        width: 100vw;
+        display: flex;
+    }
+    img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+</style>
+
+<div class="container">
+    {{#each estudiantes}}
+        <div>
+            <h2>{{nombre}} - {{edad}} , se dedica a: {{seDedicaA}}</h2>
+            <div>
+                <img src={{mascota.foto}} alt="">
+                <p>{{mascota.nombre}}</p>
+            </div>
+        </div>
+    {{/each}}
+</div>
